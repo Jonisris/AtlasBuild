@@ -1,0 +1,18 @@
+CREATE TABLE workers (
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT UNSIGNED NULL UNIQUE,
+    name VARCHAR(150) NOT NULL,
+    phone VARCHAR(30) NULL,
+    email VARCHAR(254) NULL,
+    specialization VARCHAR(100) NULL,
+    hourly_rate DECIMAL(10,2) NULL,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        ON UPDATE CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP NULL,
+
+    CONSTRAINT fk_workers_user
+        FOREIGN KEY (user_id)
+        REFERENCES users(id)
+);

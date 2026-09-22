@@ -1,4 +1,4 @@
-INSERT INTO roles (name, description)
+INSERT IGNORE INTO roles (name, description)
 VALUES
     ('admin', 'Full system access and platform administration'),
     ('project_manager', 'Manages project budgets, scheduling, procurement, and financials'),

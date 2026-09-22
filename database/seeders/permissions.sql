@@ -1,4 +1,4 @@
-INSERT INTO permissions (name, description)
+INSERT IGNORE INTO permissions (name, description)
 VALUES
     ('dashboard.view', 'View the application dashboard'),
 
